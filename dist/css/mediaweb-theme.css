@@ -1,0 +1,103 @@
+/**/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.btn:not([class*=border-radius]) {
+  border-radius: var(--border-radius-rounded);
+}
+
+.btn {
+  border-radius: var(--border-radius-rounded);
+  font-weight: var(--font-medium);
+}
+.btn:focus {
+  border: 1px solid white;
+  outline: 2px solid #80ceee;
+}
+.btn:disabled {
+  background-color: var(--color-neutral-4);
+  color: var(--color-neutral-6);
+  border-color: var(--color-neutral-6);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+.btn-primary:active {
+  background-color: var(--color-primary-darker);
+}
+.btn-primary:focus {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-neutral-0);
+  color: var(--color-primary);
+}
+.btn-secondary:hover {
+  background-color: var(--color-neutral-2);
+}
+.btn-secondary:active {
+  background-color: var(--color-neutral-4);
+}
+.btn-secondary:focus {
+  border: 1px solid #80ceee;
+  outline: 1px solid #80ceee;
+  background-color: var(--color-neutral-4);
+}
+
+.btn-terciary {
+  min-width: fit-content;
+  width: 350px;
+  background-color: var(--color-grape-lightest);
+  color: var(--color-primary);
+  border: 1px solid transparent;
+}
+.btn-terciary:hover {
+  background-color: var(--color-grape-lighter);
+}
+.btn-terciary:active {
+  background-color: var(--color-grape-light);
+}
+.btn-terciary:focus {
+  background-color: var(--color-grape-lighter);
+}
+
+.btn-plain {
+  border: 1px solid transparent;
+}
+.btn-plain:hover {
+  background-color: var(--color-secondary-lightest);
+}
+.btn-plain:active {
+  background-color: var(--color-secondary-lighter);
+}
+.btn-plain:focus {
+  background-color: var(--color-secondary-lightest);
+}
+
+:root {
+  /* Font*/
+  --font-family: "Raleway", sans-serif;
+  --font-medium: 500;
+  /* Colors */
+  --color-primary-lightest: #d2b4e8;
+  --color-primary-lighter: #ae79d7;
+  --color-primary-light: #9752cb;
+  --color-primary: #7030a0;
+  --color-primary-dark: #622a8c;
+  --color-primary-darker: #552479;
+  --color-primary-darkest: #471e65;
+  --color-secondary-lightest: #e8f1f9;
+  --color-secondary-lighter: #a3c9ea;
+  --color-secondary-light: #5fa1da;
+  --color-secondary: #1a79cb;
+  --color-secondary-dark: #1666ac;
+  --color-secondary-darker: #12548d;
+  --color-secondary-darkest: #0e426f;
+}
+
+html {
+  font-family: var(--font-family);
+}
