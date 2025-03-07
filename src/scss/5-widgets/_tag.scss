@@ -1,0 +1,15 @@
+.tag {
+    border-radius: var(--border-radius-rounded);
+    background-color: var(--color-neutral-8);
+    color: var(--color-neutral-0);
+    font-weight: var(--font-medium);
+    font-size: var(--font-size-s);
+    padding: var(--space-xs) var(--space-base);
+
+    &-small {
+        padding:var(--space-xs) var(--space-s);
+    }
+    &-medium {
+        padding:var(--space-s) var(--space-m);
+    }
+}

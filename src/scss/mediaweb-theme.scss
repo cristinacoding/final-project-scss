@@ -1,6 +1,10 @@
-/**/
-@import "./5-widgets/btn";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./5-widgets/btn";
+@import "./5-widgets/container";
+@import "./5-widgets/pagination";
+@import "./5-widgets/search";
+@import "./5-widgets/tag";
+@import "./5-widgets/sidemenu";
 
 :root {
   /* Font*/
@@ -23,8 +27,27 @@
   --color-secondary-dark: #1666ac;
   --color-secondary-darker: #12548d;
   --color-secondary-darkest: #0e426f;
-}
 
+  --color-pale-light: #d4e3f0;
+  --color-pale: #85a5c2;
+
+  /* Border */
+  --border-radius-softer: 16px;
+
+  /* Sidebar */
+--sidebar-width: 112px;
+--sidebar-width-open: 222px;
+
+}
 html {
   font-family: var(--font-family);
 }
+
+.font-medium {
+  font-weight: 500;
+}
+
+.border-radius-softer {
+  border-radius: 16px;
+}
+
