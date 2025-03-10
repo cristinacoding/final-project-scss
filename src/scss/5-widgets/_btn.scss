@@ -7,8 +7,8 @@
   font-weight: var(--font-medium);
 
       &:focus {
-      border: 1px solid white;
-      outline: 2px solid #80ceee;
+      border: var(--border-size-s) solid var(--color-neutral-0);
+      outline: var(--border-size-m) solid var(--color-focus);
       }
       &:disabled {
       background-color: var(--color-neutral-4);
@@ -44,8 +44,8 @@
         background-color: var(--color-neutral-4);
       }
       &:focus {
-        border: 1px solid #80ceee;
-        outline: 1px solid #80ceee;
+        border: var(--border-size-s) solid var(--color-focus);
+        outline: var(--border-size-s) solid var(--color-focus);
         background-color: var(--color-neutral-4);
       }
 }
@@ -56,7 +56,7 @@
   width: 350px;
   background-color: var(--color-grape-lightest);
   color: var(--color-primary);
-  border: 1px solid transparent;
+  border: var(--border-size-s) solid transparent;
 
       &:hover {
         background-color: var(--color-grape-lighter);
@@ -71,7 +71,7 @@
 
 
 .btn-plain {
-  border: 1px solid transparent;
+  border: var(--border-size-s) solid transparent;
 
       &:hover {
           background-color: var(--color-secondary-lightest);

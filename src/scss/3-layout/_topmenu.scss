@@ -1,0 +1,10 @@
+.header-top {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-0);
+  border-radius: var(--border-radius-none) var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded);
+  box-shadow: none;
+  height: 56px;
+  & a {
+    color: var(--color-neutral-0);
+  }
+}

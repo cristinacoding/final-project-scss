@@ -1,0 +1,32 @@
+:root {
+  /* Font*/
+  --font-raleway: "Raleway", sans-serif;
+  --font-medium: 500;
+
+  /* Colors */
+  --color-primary-lightest: #d2b4e8;
+  --color-primary-lighter: #ae79d7;
+  --color-primary-light: #9752cb;
+  --color-primary: #7030a0;
+  --color-primary-dark: #622a8c;
+  --color-primary-darker: #552479;
+  --color-primary-darkest: #471e65;
+
+  --color-secondary-lightest: #e8f1f9;
+  --color-secondary-lighter: #a3c9ea;
+  --color-secondary-light: #5fa1da;
+  --color-secondary: #1a79cb;
+  --color-secondary-dark: #1666ac;
+  --color-secondary-darker: #12548d;
+  --color-secondary-darkest: #0e426f;
+
+  --color-focus: #80ceee;
+
+  /* Border */
+  --border-radius-softer: 16px;
+  --border-radius-menu-item: 11px;
+
+  /* Sidebar */
+  --sidebar-width: 112px;
+  --sidebar-width-expanded: 222px;
+}

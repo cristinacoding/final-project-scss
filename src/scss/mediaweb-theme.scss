@@ -1,53 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/*! ==============================================================================
+0. Root CSS Variables
+=============================================================================== */
+@import "./1-abstract/0-root-css-variables";
+
+/*! ==============================================================================
+1. Resets
+=============================================================================== */
+@import "./1-abstract/1-resets";
+
+/*! ==============================================================================
+2. Styles
+=============================================================================== */
+/* Border Radius */
+@import "./2-base/border";
+
+/* Iconography */
+@import "./2-base/iconography";
+
+/* Typography */
+@import "./2-base/typography";
+
+/*! ==============================================================================
+3. Layout
+=============================================================================== */
+/* Side Menu */
+@import "./3-layout/sidemenu";
+
+/* Top Menu */
+
+/*! ==============================================================================
+4. Patterns
+=============================================================================== */
+/* Pagination */
+@import "./4-patterns/pagination";
+
+/* Search */
+@import "./4-patterns/search";
+
+/* Tags */
+@import "./4-patterns/tag";
+
+/*! ==============================================================================
+5. Widgets
+=============================================================================== */
+/* Button */
 @import "./5-widgets/btn";
+
+/* Container */
 @import "./5-widgets/container";
-@import "./5-widgets/pagination";
-@import "./5-widgets/search";
-@import "./5-widgets/tag";
-@import "./5-widgets/sidemenu";
-
-:root {
-  /* Font*/
-  --font-family: "Raleway", sans-serif;
-  --font-medium: 500;
-
-  /* Colors */
-  --color-primary-lightest: #d2b4e8;
-  --color-primary-lighter: #ae79d7;
-  --color-primary-light: #9752cb;
-  --color-primary: #7030a0;
-  --color-primary-dark: #622a8c;
-  --color-primary-darker: #552479;
-  --color-primary-darkest: #471e65;
-
-  --color-secondary-lightest: #e8f1f9;
-  --color-secondary-lighter: #a3c9ea;
-  --color-secondary-light: #5fa1da;
-  --color-secondary: #1a79cb;
-  --color-secondary-dark: #1666ac;
-  --color-secondary-darker: #12548d;
-  --color-secondary-darkest: #0e426f;
-
-  --color-pale-light: #d4e3f0;
-  --color-pale: #85a5c2;
-
-  /* Border */
-  --border-radius-softer: 16px;
-
-  /* Sidebar */
---sidebar-width: 112px;
---sidebar-width-open: 222px;
-
-}
-html {
-  font-family: var(--font-family);
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.border-radius-softer {
-  border-radius: 16px;
-}
-

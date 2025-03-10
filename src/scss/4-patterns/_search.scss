@@ -1,7 +1,7 @@
 .osui-search__input input[data-input] {
-    border-radius: 0;
-    border: 1px solid transparent;
-    border-bottom: 1px solid var(--color-pale-light);
+    border-radius: none;
+    border: var(--border-size-s) solid transparent;
+    border-bottom: var(--border-size-s) solid var(--color-pale-light);
     color: var(--color-pale);
     font-weight: var(--font-regular);
     background-color: transparent;

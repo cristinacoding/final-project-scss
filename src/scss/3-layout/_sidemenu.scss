@@ -1,0 +1,65 @@
+.layout-side .aside-navigation .app-menu-content {
+  color: white;
+background-color: var(--color-primary);
+border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
+width: var(--sidebar-width-expanded);
+}
+
+.layout-side .aside-navigation .app-menu-content a {
+color: white;
+}
+
+.layout-side .application-name {color: white;}
+
+.layout-side .header-logo {
+justify-content: space-between;
+padding: var(--space-base) var(--space-base);
+}
+
+.layout-side .header-logo .btn {
+width: fit-content;
+background-color: transparent;
+border: none;
+color: var(--color-primary-lighter);
+padding: 0;
+}
+
+.layout-side .header-logo .btn .icon {
+font-size: var(--font-size-m);
+color: var(--color-primary-lighter);
+margin: 0;
+}
+
+.layout-side .aside-navigation .app-menu-links {
+padding: var(--space-base) var(--space-m);
+gap: var(--space-base);
+margin-top: 145px;
+}
+
+.layout-side .aside-navigation .app-menu-links a {
+height: 48px;
+padding: 0;
+margin: 0;
+gap: var(--space-base);
+}
+
+.layout-side .aside-navigation .app-menu-links a:last-child {
+margin-top: auto;
+}
+
+.layout-side .aside-navigation .app-menu-links .icon {
+height: 48px;
+width: 48px;
+font-size: var(--font-size-h1);
+place-content: center;
+}
+
+.layout-side .aside-navigation .app-menu-links .icon--active {
+color: white;
+background-color: var(--color-primary-darker);
+}
+
+
+.layout.layout-side .main {
+  margin-left: var(--sidebar-width-expanded);
+}
