@@ -1,10 +1,34 @@
-.header-top {
+.header {
+  color: white;
   background-color: var(--color-primary);
-  color: var(--color-neutral-0);
   border-radius: var(--border-radius-none) var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded);
-  box-shadow: none;
-  height: 56px;
-  & a {
-    color: var(--color-neutral-0);
   }
+
+  .header--dark {
+    background-color: var(--color-secondary-darkest);
+  }
+  
+  .header .header-navigation a, .header .header-navigation a:hover {
+      color: white;
+  }
+
+.header-top.ThemeGrid_Container {
+    max-width: 1920px;
+}
+
+.layout.layout-top .header-navigation .app-menu-links {
+    margin-left: 100px;
+}
+
+.header-logo .application-name {
+    font-size: var(--font-size-m);
+}
+
+.header-top.ThemeGrid_Container {
+  padding-left: var(--space-base);
+  padding-right: var(--space-base);
+}
+
+.link--active {
+  border-bottom: var(--border-size-s) solid white;
 }

@@ -1,65 +1,109 @@
 .layout-side .aside-navigation .app-menu-content {
   color: white;
-background-color: var(--color-primary);
-border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
-width: var(--sidebar-width-expanded);
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
+  width: var(--sidebar-width);
+  transition: width var(--transition-timing) var(--transition-effect);
 }
 
-.layout-side .aside-navigation .app-menu-content a {
-color: white;
+.layout-side .aside-navigation .app-menu-content a, .layout-side .aside-navigation .app-menu-links a:hover, .layout-side .aside-navigation .app-menu-links a.active:hover {
+  color: white;
 }
 
-.layout-side .application-name {color: white;}
+.layout-side .application-name {
+  font-size: var(--font-size-m);
+  color: white;
+}
+
+.layout-side .application-name span {
+  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+  white-space: nowrap;}
 
 .layout-side .header-logo {
-justify-content: space-between;
-padding: var(--space-base) var(--space-base);
+  justify-content: space-between;
+  padding: var(--space-base) var(--space-base);
 }
 
 .layout-side .header-logo .btn {
-width: fit-content;
-background-color: transparent;
-border: none;
-color: var(--color-primary-lighter);
-padding: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  border: none;
+  color: var(--color-primary-lighter);
+  padding: 0;
+  position: absolute;
+  right: var(--space-s);
 }
 
 .layout-side .header-logo .btn .icon {
-font-size: var(--font-size-m);
-color: var(--color-primary-lighter);
-margin: 0;
+  font-size: var(--font-size-l);
+  color: var(--color-primary-lighter);
+  margin: 0;
+  place-content: center;
 }
 
 .layout-side .aside-navigation .app-menu-links {
-padding: var(--space-base) var(--space-m);
-gap: var(--space-base);
-margin-top: 145px;
+  padding: var(--space-base) var(--space-l);
+  gap: var(--space-base);
+  margin-top: 145px;
+  align-items: start;
 }
 
 .layout-side .aside-navigation .app-menu-links a {
-height: 48px;
-padding: 0;
-margin: 0;
-gap: var(--space-base);
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  gap: var(--space-base);
 }
 
 .layout-side .aside-navigation .app-menu-links a:last-child {
-margin-top: auto;
+  bottom: var(--space-base);
+  position: absolute;
+}
+.layout-side .aside-navigation .app-menu-links a span {
+transition: all var(--transition-timing) var(--transition-effect);
 }
 
 .layout-side .aside-navigation .app-menu-links .icon {
-height: 48px;
-width: 48px;
-font-size: var(--font-size-h1);
-place-content: center;
+  height: 48px;
+  width: 48px;
+  font-size: var(--font-size-h1);
+  place-content: center;
+  border-radius: var(--border-radius-link-icon);
 }
-
-.layout-side .aside-navigation .app-menu-links .icon--active {
-color: white;
-background-color: var(--color-primary-darker);
-}
-
 
 .layout.layout-side .main {
-  margin-left: var(--sidebar-width-expanded);
+  margin-left: var(--sidebar-width);
+}
+
+
+.layout-side .aside-navigation .app-menu-content.collapse-sidebar {
+  width: var(--sidebar-width-collapsed);
+}
+
+
+.sidebar-dark {
+  background-color: var(--color-secondary-darkest);
+
+  & .icon-active {
+    background-color: white;
+    color: var(--color-secondary-darker);
+  }
+}
+
+.icon-active {
+  background-color: var(--color-primary-darker);
+}
+
+.collapse-sidebar {
+  width: var(--sidebar-width-collapsed);
+}
+
+.hide-sidebar-text {
+  width: 0;
+  opacity: 0;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg);
 }

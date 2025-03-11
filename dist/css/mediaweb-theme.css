@@ -24,10 +24,10 @@
   --color-focus: #80ceee;
   /* Border */
   --border-radius-softer: 16px;
-  --border-radius-menu-item: 11px;
+  --border-radius-link-icon: 11px;
   /* Sidebar */
-  --sidebar-width: 112px;
-  --sidebar-width-expanded: 222px;
+  --sidebar-width: 222px;
+  --sidebar-width-collapsed: 112px;
 }
 
 /*! ==============================================================================
@@ -48,8 +48,8 @@ html {
 /* Iconography */
 @font-face {
   font-family: "mediaweb-icons";
-  src: url("/testing/mediaweb-icons.eot");
-  src: url("/testing/mediaweb-icons.eot") format("embedded-opentype"), url("/testing/mediaweb-icons.ttf") format("truetype"), url("/testing/mediaweb-icons.woff") format("woff"), url("/testing/mediaweb-icons.svg") format("svg");
+  src: url("/RocketDS/mediaweb-icons.eot");
+  src: url("/RocketDS/mediaweb-icons.eot") format("embedded-opentype"), url("/RocketDS/mediaweb-icons.ttf") format("truetype"), url("/RocketDS/mediaweb-icons.woff") format("woff"), url("/RocketDS/mediaweb-icons.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -254,15 +254,22 @@ h6,
   color: white;
   background-color: var(--color-primary);
   border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
-  width: var(--sidebar-width-expanded);
+  width: var(--sidebar-width);
+  transition: width var(--transition-timing) var(--transition-effect);
 }
 
-.layout-side .aside-navigation .app-menu-content a {
+.layout-side .aside-navigation .app-menu-content a, .layout-side .aside-navigation .app-menu-links a:hover, .layout-side .aside-navigation .app-menu-links a.active:hover {
   color: white;
 }
 
 .layout-side .application-name {
+  font-size: var(--font-size-m);
   color: white;
+}
+
+.layout-side .application-name span {
+  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+  white-space: nowrap;
 }
 
 .layout-side .header-logo {
@@ -272,22 +279,27 @@ h6,
 
 .layout-side .header-logo .btn {
   width: fit-content;
+  height: fit-content;
   background-color: transparent;
   border: none;
   color: var(--color-primary-lighter);
   padding: 0;
+  position: absolute;
+  right: var(--space-s);
 }
 
 .layout-side .header-logo .btn .icon {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   color: var(--color-primary-lighter);
   margin: 0;
+  place-content: center;
 }
 
 .layout-side .aside-navigation .app-menu-links {
-  padding: var(--space-base) var(--space-m);
+  padding: var(--space-base) var(--space-l);
   gap: var(--space-base);
   margin-top: 145px;
+  align-items: start;
 }
 
 .layout-side .aside-navigation .app-menu-links a {
@@ -298,7 +310,12 @@ h6,
 }
 
 .layout-side .aside-navigation .app-menu-links a:last-child {
-  margin-top: auto;
+  bottom: var(--space-base);
+  position: absolute;
+}
+
+.layout-side .aside-navigation .app-menu-links a span {
+  transition: all var(--transition-timing) var(--transition-effect);
 }
 
 .layout-side .aside-navigation .app-menu-links .icon {
@@ -306,18 +323,78 @@ h6,
   width: 48px;
   font-size: var(--font-size-h1);
   place-content: center;
-}
-
-.layout-side .aside-navigation .app-menu-links .icon--active {
-  color: white;
-  background-color: var(--color-primary-darker);
+  border-radius: var(--border-radius-link-icon);
 }
 
 .layout.layout-side .main {
-  margin-left: var(--sidebar-width-expanded);
+  margin-left: var(--sidebar-width);
+}
+
+.layout-side .aside-navigation .app-menu-content.collapse-sidebar {
+  width: var(--sidebar-width-collapsed);
+}
+
+.sidebar-dark {
+  background-color: var(--color-secondary-darkest);
+}
+.sidebar-dark .icon-active {
+  background-color: white;
+  color: var(--color-secondary-darker);
+}
+
+.icon-active {
+  background-color: var(--color-primary-darker);
+}
+
+.collapse-sidebar {
+  width: var(--sidebar-width-collapsed);
+}
+
+.hide-sidebar-text {
+  width: 0;
+  opacity: 0;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg);
 }
 
 /* Top Menu */
+.header {
+  color: white;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-none) var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded);
+}
+
+.header--dark {
+  background-color: var(--color-secondary-darkest);
+}
+
+.header .header-navigation a, .header .header-navigation a:hover {
+  color: white;
+}
+
+.header-top.ThemeGrid_Container {
+  max-width: 1920px;
+}
+
+.layout.layout-top .header-navigation .app-menu-links {
+  margin-left: 100px;
+}
+
+.header-logo .application-name {
+  font-size: var(--font-size-m);
+}
+
+.header-top.ThemeGrid_Container {
+  padding-left: var(--space-base);
+  padding-right: var(--space-base);
+}
+
+.link--active {
+  border-bottom: var(--border-size-s) solid white;
+}
+
 /*! ==============================================================================
 4. Patterns
 =============================================================================== */
