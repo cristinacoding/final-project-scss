@@ -1,0 +1,25 @@
+.health-info {
+  min-width: 240px;
+  background-color: var(--color-secondary-lightest);
+  text-align: center;
+  border: var(--space-none);
+  padding: 12px (--space-none);
+  border-radius: var(--border-radius-rounded);
+  font-weight: var(--font-medium);
+  color: var(--color-secondary-lighter);
+  
+  p {
+    margin-block-start: var(--space-xs);
+    margin-block-end: var(--space-xs);
+  }
+
+  &__data {
+    font-weight: var(--font-bold);
+    color: var(--color-secondary-light);
+    font-size: var(--font-size-m);
+  }
+
+  .columns-item:not(:last-child) {
+    border-right: var(--color-blue-lighter) var(--border-size-s) solid;
+  }
+}

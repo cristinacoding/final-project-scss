@@ -1,5 +1,5 @@
 .header {
-  color: white;
+  color: var(--color-neutral-0);
   background-color: var(--color-primary);
   border-radius: var(--border-radius-none) var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded);
   }
@@ -9,7 +9,7 @@
   }
   
   .header .header-navigation a, .header .header-navigation a:hover {
-      color: white;
+    color: var(--color-neutral-0);
   }
 
 .header-top.ThemeGrid_Container {
@@ -30,5 +30,5 @@
 }
 
 .link--active {
-  border-bottom: var(--border-size-s) solid white;
+  border-bottom: var(--border-size-s) solid var(--color-neutral-0);
 }

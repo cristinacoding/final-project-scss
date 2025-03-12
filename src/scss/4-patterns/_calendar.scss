@@ -1,0 +1,72 @@
+.calendar {
+  &__heading {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-s);
+    color: var(--color-secondary-darkest);
+    margin-block-start: var(--space-xs);
+    margin-block-end: var(--space-xs);
+  }
+
+  &__week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 74px;
+    padding: 8px var(--space-none);
+    border-radius: var(--border-radius-rounded);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-medium);
+    p {
+      margin-block-start: var(--space-xs);
+      margin-block-end: var(--space-xs);
+    }
+  }
+
+  &__weekday {
+    color: var(--color-blue-dark);
+  }
+
+  &__numberday {
+    color: var(--color-neutral-7);
+    font-weight: var(--font-bold);
+  }
+
+  &__numberday--schedule::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    width: 4px;
+    height: 4px;
+    border-radius: var(--border-radius-rounded);
+    background-color: var(--color-blue);
+  }
+
+  &__day--active {
+    background-color: var(--color-blue);
+    padding: 8px 5px;
+  }
+
+  &__day--active .calendar__numberday--schedule::before {
+    left: 28px;
+    background-color: var(--color-neutral-0);
+  }
+
+  &__weekday--active,
+  .calendar__numberday--active {
+    color: var(--neutral-color-0);
+  }
+  
+  &__day--disabled {
+    color: var(--color-neutral-4);
+  }
+}

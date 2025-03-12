@@ -26,8 +26,9 @@
   --border-radius-softer: 16px;
   --border-radius-link-icon: 11px;
   /* Sidebar */
-  --sidebar-width: 222px;
-  --sidebar-width-collapsed: 112px;
+  --left-sidebar-width: 222px;
+  --left-sidebar-width-collapsed: 112px;
+  --right-sidebar-width: 440px;
 }
 
 /*! ==============================================================================
@@ -37,8 +38,20 @@ html {
   font-family: var(--font-raleway);
 }
 
+body {
+  background-color: var(--color-neutral-0);
+}
+
 /*! ==============================================================================
-2. Styles
+2. HTML Elements
+=============================================================================== */
+/* Headings */
+.content-top-title.heading1.ph {
+  color: var(--color-primary);
+}
+
+/*! ==============================================================================
+3. Styles
 =============================================================================== */
 /* Border Radius */
 .border-radius-softer {
@@ -48,8 +61,8 @@ html {
 /* Iconography */
 @font-face {
   font-family: "mediaweb-icons";
-  src: url("/RocketDS/mediaweb-icons.eot");
-  src: url("/RocketDS/mediaweb-icons.eot") format("embedded-opentype"), url("/RocketDS/mediaweb-icons.ttf") format("truetype"), url("/RocketDS/mediaweb-icons.woff") format("woff"), url("/RocketDS/mediaweb-icons.svg") format("svg");
+  src: url("/Mediaweb/mediaweb-icons.eot");
+  src: url("/Mediaweb/mediaweb-icons.eot") format("embedded-opentype"), url("/Mediaweb/mediaweb-icons.ttf") format("truetype"), url("/Mediaweb/mediaweb-icons.woff") format("woff"), url("/Mediaweb/mediaweb-icons.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -247,29 +260,49 @@ h6,
 }
 
 /*! ==============================================================================
-3. Layout
+4. Layout
 =============================================================================== */
 /* Side Menu */
+.tablet .app-menu-content,
+.phone .app-menu-content {
+  left: 0;
+}
+
+.layout.layout-side .main {
+  margin-left: var(--left-sidebar-width);
+  margin-right: var(--right-sidebar-width);
+  transition: margin var(--transition-timing) var(--transition-effect);
+  background-color: var(--color-secondary-lightest);
+  border-radius: var(--border-radius-none) 51px 51px var(--border-radius-none);
+}
+
+/* Left Sidebar */
+.layout-side .aside-navigation {
+  width: var(--left-sidebar-width);
+  position: relative;
+  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+}
+
 .layout-side .aside-navigation .app-menu-content {
-  color: white;
+  color: var(--color-neutral-0);
   background-color: var(--color-primary);
   border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
-  width: var(--sidebar-width);
+  width: var(--left-sidebar-width);
   transition: width var(--transition-timing) var(--transition-effect);
 }
 
-.layout-side .aside-navigation .app-menu-content a, .layout-side .aside-navigation .app-menu-links a:hover, .layout-side .aside-navigation .app-menu-links a.active:hover {
-  color: white;
+.layout-side .aside-navigation .app-menu-content a,
+.layout-side .aside-navigation .app-menu-links a:hover,
+.layout-side .aside-navigation .app-menu-links a.active:hover {
+  color: var(--color-neutral-0);
 }
 
-.layout-side .application-name {
-  font-size: var(--font-size-m);
-  color: white;
-}
-
-.layout-side .application-name span {
+.layout-side .application-name .app-name {
   transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
   white-space: nowrap;
+  font-size: var(--font-size-m);
+  color: var(--color-neutral-1);
+  font-weight: var(--font-medium);
 }
 
 .layout-side .header-logo {
@@ -277,22 +310,18 @@ h6,
   padding: var(--space-base) var(--space-base);
 }
 
-.layout-side .header-logo .btn {
+.layout-side .aside-navigation .btn,
+.phone .layout:not(.layout-native) .btn {
   width: fit-content;
   height: fit-content;
   background-color: transparent;
-  border: none;
-  color: var(--color-primary-lighter);
-  padding: 0;
+  border: var(--border-size-none);
+  padding: var(--space-none);
   position: absolute;
-  right: var(--space-s);
-}
-
-.layout-side .header-logo .btn .icon {
-  font-size: var(--font-size-l);
-  color: var(--color-primary-lighter);
-  margin: 0;
-  place-content: center;
+  right: var(--space-base);
+  top: var(--space-base);
+  z-index: 12;
+  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
 }
 
 .layout-side .aside-navigation .app-menu-links {
@@ -304,8 +333,8 @@ h6,
 
 .layout-side .aside-navigation .app-menu-links a {
   height: 48px;
-  padding: 0;
-  margin: 0;
+  padding: var(--space-none);
+  margin: var(--space-none);
   gap: var(--space-base);
 }
 
@@ -326,19 +355,11 @@ h6,
   border-radius: var(--border-radius-link-icon);
 }
 
-.layout.layout-side .main {
-  margin-left: var(--sidebar-width);
-}
-
-.layout-side .aside-navigation .app-menu-content.collapse-sidebar {
-  width: var(--sidebar-width-collapsed);
-}
-
 .sidebar-dark {
   background-color: var(--color-secondary-darkest);
 }
 .sidebar-dark .icon-active {
-  background-color: white;
+  background-color: var(--color-neutral-0);
   color: var(--color-secondary-darker);
 }
 
@@ -346,22 +367,66 @@ h6,
   background-color: var(--color-primary-darker);
 }
 
-.collapse-sidebar {
-  width: var(--sidebar-width-collapsed);
+/* Left Sidebar Collapsed */
+.layout.layout-side.layout-side--collapsed .aside-navigation .app-menu-content {
+  width: var(--left-sidebar-width-collapsed);
 }
-
-.hide-sidebar-text {
+.layout.layout-side.layout-side--collapsed .aside-navigation {
+  width: var(--left-sidebar-width-collapsed);
+}
+.layout.layout-side.layout-side--collapsed .app-menu-links span,
+.layout.layout-side.layout-side--collapsed .application-name span {
   width: 0;
   opacity: 0;
 }
-
-.rotate-arrow {
+.layout.layout-side.layout-side--collapsed .aside-navigation .btn .icon {
   transform: rotate(180deg);
+}
+.layout.layout-side.layout-side--collapsed .main {
+  margin-left: var(--left-sidebar-width-collapsed);
+}
+
+/* Right Sidebar */
+.osui-sidebar--is-right {
+  padding: 36px;
+  box-shadow: var(--shadow-none);
+  width: var(--right-sidebar-width);
+  transform: translateX(101%);
+}
+.osui-sidebar--is-right .btn-arrow {
+  width: 40px;
+  height: 92px;
+  left: -40px;
+  position: absolute;
+  background: var(--color-neutral-0);
+  border: var(--border-size-none);
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  z-index: 999;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+.osui-sidebar--is-right .btn-arrow .icon {
+  width: fit-content;
+  height: fit-content;
+  font-size: var(--font-size-display);
+  font-weight: var(--font-bold);
+}
+
+.layout.layout-side.layout-side-right--closed .btn-arrow .icon {
+  transform: rotate(180deg);
+}
+.layout.layout-side.layout-side-right--closed .main {
+  margin-right: 0;
+}
+
+.osui-sidebar:not(.osui-sidebar--is-open):not(.no-transition) {
+  opacity: 1;
 }
 
 /* Top Menu */
 .header {
-  color: white;
+  color: var(--color-neutral-0);
   background-color: var(--color-primary);
   border-radius: var(--border-radius-none) var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded);
 }
@@ -371,7 +436,7 @@ h6,
 }
 
 .header .header-navigation a, .header .header-navigation a:hover {
-  color: white;
+  color: var(--color-neutral-0);
 }
 
 .header-top.ThemeGrid_Container {
@@ -392,11 +457,11 @@ h6,
 }
 
 .link--active {
-  border-bottom: var(--border-size-s) solid white;
+  border-bottom: var(--border-size-s) solid var(--color-neutral-0);
 }
 
 /*! ==============================================================================
-4. Patterns
+5. Patterns
 =============================================================================== */
 /* Pagination */
 .pagination-button {
@@ -453,7 +518,7 @@ h6,
 }
 
 /*! ==============================================================================
-5. Widgets
+6. Widgets
 =============================================================================== */
 /* Button */
 .btn:not([class*=border-radius]) {
