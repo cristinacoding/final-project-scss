@@ -1,0 +1,44 @@
+.card-details {
+  box-shadow: var(--shadow-none);
+  font-weight: var(--font-bold);
+  
+  a {
+    color: var(--color-primary);
+  }
+
+  &__name h2 {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-bold);
+    color: var(--color-neutral-8);
+  }
+
+  &__contact p {
+    color: var(--color-neutral-6);
+    font-weight: var(--font-bold);
+  }
+
+  &__bio p {
+    color: var(--color-neutral-7);
+    font-weight: var(--font-bold);
+  }
+
+  &__photo img {
+    width: 123px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  &__bottom-heading {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-9);
+  }
+
+  &__bottom-value {
+    font-size: var(--font-size-m);
+    color: var(--color-neutral-9);
+  }
+
+  &__bottom .icon {
+    color: var(--color-neutral-5);
+  }
+}

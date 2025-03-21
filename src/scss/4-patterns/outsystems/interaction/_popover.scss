@@ -1,0 +1,22 @@
+[data-popover] > .popover-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    border-radius: var(--border-radius-softer);
+    box-shadow: var(--shadow-xs);
+    padding: var(--space-m);
+    border: var(--border-size-none);
+    width: 234px;
+    margin-top: var(--space-xl);
+    margin-left: calc(var(--space-xl)* -1);
+
+  label {
+    margin-bottom: calc(-1 * var(--space-base));
+  }
+}
+
+.popover-bottom__btns.ThemeGrid_Width1.ThemeGrid_MarginGutter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

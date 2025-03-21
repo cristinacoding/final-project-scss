@@ -1,5 +1,5 @@
 .pagination-button {
-    border: none;
+    border: var(--border-size-none);
     font-weight: var(--font-regular);
     border-radius: var(--border-radius-circle);
     background-color: transparent;
@@ -7,9 +7,10 @@
     height: 32px;
     width: 32px;
     
-    &.is-active {
+    &.is--active {
         border: var(--border-size-s) solid var(--color-primary);
         color: var(--color-primary);
+        background-color: var(--color-neutral-0);
     }
     &[disabled] {
         opacity: 1;

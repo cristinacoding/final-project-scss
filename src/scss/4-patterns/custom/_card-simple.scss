@@ -1,0 +1,88 @@
+.card-simple {
+  border-radius: var(--border-radius-softer);
+  padding: var(--space-m);
+  background-color: var(--color-neutral-0);
+  position: relative;
+  width: 404px;
+  min-height: 377px;
+
+  &__photo-name-role {
+    display: flex;
+    gap: var(--space-m);
+    margin-bottom: var(--space-m);
+  }
+
+  &__name-role {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__photo img {
+    width: 68px;
+    height: 68px;
+    border-radius: var(--border-radius-circle);
+  }
+
+  &__name {
+    h2,
+    span,
+    p {
+      font-size: var(--font-size-m);
+      font-weight: var(--font-medium);
+      color: var(--color-neutral-8);
+      margin-bottom: var(--space-s);
+    }
+  }
+
+  &__role {
+    h3,
+    span,
+    p {
+      font-size: var(--font-size-s);
+      font-weight: var(--font-regular);
+      color: var(--color-neutral-6);
+    }
+  }
+
+  &__bio {
+    margin-bottom: var(--space-base);
+    span,
+    p {
+      color: var(--color-neutral-7);
+      margin-bottom: var(--space-m);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-neutral-6);
+    p,
+    span {
+      margin: var(--space-s) var(--space-none) var(--space-none) var(--space-none);
+    }
+  }
+
+  &__view-button {
+    bottom: var(--space-l);
+    position: absolute;
+  }
+
+  &__corner-btn .btn {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: var(--border-size-none);
+    padding: var(--space-none);
+    position: absolute;
+    right: var(--space-m);
+    top: var(--space-m);
+    padding: var(--space-none);
+
+    .icon {
+      color: var(--color-neutral-5);
+      font-size: var(--font-size-xl);
+    }
+  }
+}

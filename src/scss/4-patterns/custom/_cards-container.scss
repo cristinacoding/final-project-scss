@@ -1,0 +1,12 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-xl);
+  gap: var(--space-xl);
+  width: 100%;
+  &--2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 404px);
+    gap: var(--space-base) var(--space-m);
+  }
+}

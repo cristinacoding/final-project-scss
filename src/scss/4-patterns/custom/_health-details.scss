@@ -1,9 +1,10 @@
-.health-info {
-  min-width: 240px;
+.health-details {
+  min-width: 200px;
+  width: 100%;
   background-color: var(--color-secondary-lightest);
   text-align: center;
-  border: var(--space-none);
-  padding: 12px (--space-none);
+  border: var(--border-size-none);
+  padding: 12px var(--space-none);
   border-radius: var(--border-radius-rounded);
   font-weight: var(--font-medium);
   color: var(--color-secondary-lighter);

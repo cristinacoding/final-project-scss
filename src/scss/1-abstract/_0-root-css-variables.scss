@@ -24,10 +24,10 @@
 
   /* Border */
   --border-radius-softer: 16px;
-  --border-radius-link-icon: 11px;
+  --border-radius-link-icon: 11px; /* retirar variavel por valor direto */
 
   /* Sidebar */
-  --left-sidebar-width: 222px;
-  --left-sidebar-width-collapsed: 112px;
+  --left-sidebar-width-expanded: 222px;
+  --left-sidebar-width: 112px;
   --right-sidebar-width: 440px;
 }

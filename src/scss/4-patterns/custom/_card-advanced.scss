@@ -1,0 +1,115 @@
+.card-advanced {
+  border-radius: var(--border-radius-softer);
+  padding: var(--space-m);
+  color: var(--color-secondary-dark);
+  font-weight: var(--font-medium);
+  line-height: 24px;
+  position: relative;
+  overflow: hidden;
+  min-height: fit-content;
+  width: 100%;
+
+  &__background-image {
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    &--top img {
+      top: 0;
+      bottom: auto;
+      right: 20px;
+    }
+  }
+
+  &__title {
+    color: var(--color-secondary-darkest);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-bold);
+  }
+  &__subtitle {
+    color: var(--color-secondary-darkest);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-bold);
+  }
+
+  &__content {
+    color: var(--color-secondary-darker);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-medium);
+  }
+
+  &__content-image {
+  }
+
+  a {
+    color: var(--color-blue-light);
+  }
+
+  &__btn {
+    .btn:not([class*=border-radius]) {
+      border-radius: var(--border-radius-none);
+      border-top-left-radius: var(--border-radius-softer);
+    }
+    .btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 40px;
+      width: 47px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-neutral-0);
+      border-radius : var(--border-radius-none);
+      border: var(--border-size-none);
+      .icon {
+        color: var(--color-blue-darkest);
+        font-size: var(--font-size-m);
+        font-weight: var(--font-bold);
+      }
+    }
+  }
+
+  &.card {
+    border: var(--border-size-none);
+    border-radius: var(--border-radius-softer);
+  }
+
+  .card-content {
+    padding: var(--space-s) var(--space-m);
+  }
+}
+
+
+/* Style list of people */
+.attendees {
+  display: flex;
+  flex-shrink: 0;
+}
+.attendee {
+  background-color: var(--color-secondary);
+  border: 1px solid white;
+  overflow: hidden;
+  margin-left: -8px;
+}
+.attendees::after {
+  font-family: "Raleway";
+  content: "+12";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: var(--color-blue-dark);
+  border-radius: 100%;
+  border: 1px solid white;
+  overflow: hidden;
+  margin-left: -8px;
+}
+.avatar-medium {
+  min-width: 40px;
+}

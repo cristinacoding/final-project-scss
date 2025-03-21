@@ -9,17 +9,17 @@
 @import "./1-abstract/1-resets";
 
 /*! ==============================================================================
-2. HTML Elements
+2. Base
 =============================================================================== */
-/* Headings */
-@import "./2-base/html_elements/headings";
+/* HTML Elements */
+@import "./2-base/html_elements/html_elements";
+
+/* Useful Classes */
+@import "./2-base/useful-classes";
 
 /*! ==============================================================================
 3. Styles
 =============================================================================== */
-/* Border Radius */
-@import "./2-base/border";
-
 /* Iconography */
 @import "./2-base/iconography";
 
@@ -31,28 +31,62 @@
 4. Layout
 =============================================================================== */
 /* Side Menu */
-@import "./3-layout/sidemenu";
+@import "./3-layout/layout-sidemenu";
 
 /* Top Menu */
-@import "./3-layout/topmenu";
+@import "./3-layout/layout-topmenu";
 
 /*! ==============================================================================
 5. Patterns
 =============================================================================== */
 /* Pagination */
-@import "./4-patterns/pagination";
+@import "./4-patterns/outsystems/navigation/pagination";
+
+/* Date Picker */
+@import "./4-patterns/outsystems/interaction/date-picker";
+
+/* Popover */
+@import "./4-patterns/outsystems/interaction/popover";
 
 /* Search */
-@import "./4-patterns/search";
+@import "./4-patterns/outsystems/interaction/search";
 
-/* Tags */
-@import "./4-patterns/tag";
+/* Tag */
+@import "./4-patterns/outsystems/content/tag";
+
+/* Card Advanced */
+@import "./4-patterns/custom/card-advanced";
+
+/* Card Details */
+@import "./4-patterns/custom/card-details";
+
+/* Card Simple */
+@import "./4-patterns/custom/card-simple";
+
+/* Cards Container */
+@import "./4-patterns/custom/cards-container";
+
+/* User Details */
+@import "./4-patterns/custom/user-details";
+
+/*Health Details */
+@import "./4-patterns/custom/health-details";
+
+/* Clock */
+@import "./4-patterns/custom/clock";
+
+/* Calendar */
+@import "./4-patterns/custom/calendar";
+
+/* Accordion Table */
+@import "./4-patterns/custom/table-expandable";
+
 
 /*! ==============================================================================
 6. Widgets
 =============================================================================== */
 /* Button */
-@import "./5-widgets/btn";
+@import "./4-patterns/outsystems/widgets/btn";
 
-/* Container */
-@import "./5-widgets/container";
+/* Table */
+@import "./4-patterns/outsystems/widgets/table";

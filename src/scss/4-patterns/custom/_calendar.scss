@@ -1,4 +1,72 @@
 .calendar {
+  &__month {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-s);
+    color: var(--color-secondary-darkest);
+  }
+
+  .icon {
+    color: var(--color-secondary-darkest);
+    font-size: var(--font-size-xl);
+  }
+
+  &__days {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 74px;
+    position: relative;
+
+    &-weekday {
+      font-weight: var(--font-medium);
+      color: var(--color-blue-dark);
+      margin-bottom: var(--space-xs);
+    }
+
+    &-number {
+      display: block;
+      color: var(--color-neutral-7);
+      font-weight: var(--font-bold);
+    }
+
+    &--today {
+      border-radius: var(--border-radius-rounded);
+      background-color: var(--color-blue);
+      color: var(--color-neutral-0);
+      width: 41px;
+
+      .calendar__day-weekday,
+      .calendar__day-number {
+        color: var(--color-neutral-0);
+      }
+      &::before { 
+        content: "";
+        position: absolute;
+        bottom: var(--space-l);
+        right: var(--space-s);
+        width: 4px;
+        height: 4px;
+        border-radius: var(--border-radius-rounded);
+        background-color: var(--color-neutral-0);
+      }
+    }
+
+    &--last {
+      .calendar__day-weekday,
+      .calendar__day-number {
+        color: var(--color-neutral-4);
+      }
+    }
+  }
+}
+
+/* .calendar {
   &__heading {
     font-weight: var(--font-bold);
     font-size: var(--font-size-s);
@@ -70,3 +138,4 @@
     color: var(--color-neutral-4);
   }
 }
+ */

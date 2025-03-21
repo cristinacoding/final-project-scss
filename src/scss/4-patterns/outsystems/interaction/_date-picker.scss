@@ -1,0 +1,14 @@
+input.form-control.popover-input.OSFillParent.form-control.input {
+    border-radius: var(--border-radius-rounded);
+    border-color: var(--color-neutral-6);
+}
+
+.input-with-icon.input-with-icon-right .input-with-icon-content-icon .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-h3);
+    color: var(--color-primary);
+    margin-right: 20px;
+}
+

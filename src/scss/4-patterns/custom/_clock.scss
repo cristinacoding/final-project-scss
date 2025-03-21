@@ -1,0 +1,16 @@
+.clock {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  width: 240px;
+  height: 48px;
+  border-radius: var(--border-radius-rounded);
+  padding: var(--space-base);
+  color: var(--color-neutral-7);
+  font-weight: var(--font-medium);
+  border: var(--border-size-none);
+  box-shadow: var(--shadow-xs);
+  .icon {
+    font-size: var(--font-size-l);
+  }
+}
