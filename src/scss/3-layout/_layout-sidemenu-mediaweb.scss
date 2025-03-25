@@ -1,0 +1,247 @@
+.layout-mediaweb.layout.layout-side {
+  .ThemeGrid_Container.main-content {
+    /* Fix padding */
+    padding: var(--space-m);
+  }
+
+  /* Top */
+  .content-top-title {
+    margin-bottom: var(--space-s);
+  }
+
+  .top-first-row {
+    margin-bottom: var(--space-base);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-second-row {
+    margin-bottom: var(--space-base);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Responsive */
+  .tablet & .app-menu-content,
+  .phone & .app-menu-content {
+    /* So left sidebar doesn't disappear in phone/ layout */
+    left: 0;
+  }
+
+  .main {
+    /* Style middle/main content */
+    padding: var(--space-l);
+    margin-left: calc(var(--left-sidebar-width) - 20px);
+    margin-right: var(--right-sidebar-width);
+    transition: margin var(--transition-timing) var(--transition-effect);
+    background-color: var(--color-secondary-lightest);
+    border-radius: var(--border-radius-none) 51px 51px var(--border-radius-none);
+  }
+
+  /* Left Sidebar */
+
+  .application-name .app-name {
+    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+    white-space: nowrap;
+    font-size: var(--font-size-m);
+    color: var(--color-neutral-1);
+    font-weight: var(--font-medium);
+    width: 0;
+    opacity: 0;
+  }
+
+  .header-logo {
+    justify-content: space-between;
+    padding: var(--space-base) var(--space-base);
+  }
+
+  .aside-navigation {
+    /* Style left sidebar */
+    width: var(--left-sidebar-width);
+    position: relative;
+    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+    z-index: 16;
+
+    .app-menu-content {
+      /* Style left sidebar */
+      color: var(--color-neutral-0);
+      background-color: var(--color-primary);
+      border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
+      width: var(--left-sidebar-width);
+      transition: width var(--transition-timing) var(--transition-effect);
+    }
+
+    .app-menu-content a,
+    .app-menu-links a:hover,
+    .app-menu-links a.active:hover,
+    .app-menu-links a.active {
+      /* Make nav links text always look the same */
+      color: var(--color-neutral-0);
+      background-color: transparent;
+      font-weight: var(--font-regular);
+    }
+
+    .app-menu-links a.active {
+      .icon {
+        background-color: var(--color-primary-darker);
+      }
+    }
+
+    .btn-left-toggle .icon {
+      /* Style left sidebar toggle btn icon */
+      font-size: var(--font-size-l);
+      color: var(--color-primary-lighter);
+      margin: 0px;
+      place-content: center;
+      transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+    }
+
+    .app-menu-links {
+      /* Style nav links container */
+      padding: var(--space-base) var(--space-l);
+      gap: var(--space-base);
+      margin-top: 145px;
+      align-items: start;
+
+      a {
+        /* Style nav links */
+        height: 48px;
+        padding: var(--space-none);
+        margin: var(--space-none);
+        gap: var(--space-base);
+      }
+
+      a:last-child {
+        /* Set last link to bottom */
+        bottom: var(--space-base);
+        position: absolute;
+      }
+
+      a span {
+        /* Hide links text by default and add transition */
+        transition: all var(--transition-timing) var(--transition-effect);
+        width: 0;
+        opacity: 0;
+      }
+
+      .icon {
+        /*Style link icon */
+        height: 48px;
+        width: 48px;
+        font-size: var(--font-size-h1);
+        place-content: center;
+        border-radius: var(--border-radius-link-icon);
+      }
+    }
+  }
+
+  .aside-navigation .btn-left-toggle,
+  .phone .layout:not(.layout-native) .btn-left-toggle {
+    /* Style toggle btn */
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: var(--border-size-none);
+    padding: var(--space-none);
+    position: absolute;
+    right: var(--space-base);
+    top: var(--space-base);
+    z-index: 17;
+    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+  }
+
+  .sidebar-dark {
+    background-color: var(--color-secondary-darkest);
+
+    & .icon-active {
+      background-color: var(--color-neutral-0);
+      color: var(--color-secondary-darker);
+    }
+  }
+
+  .icon-active {
+    background-color: var(--color-primary-darker);
+  }
+
+  /* Left Sidebar Expanded */
+  &.layout-side--expanded {
+    .aside-navigation .app-menu-content {
+      width: var(--left-sidebar-width-expanded);
+    }
+
+    .aside-navigation {
+      width: var(--left-sidebar-width-expanded);
+    }
+
+    .app-menu-links a span,
+    .app-name {
+      /* Show links and app name */
+      width: auto;
+      opacity: 1;
+    }
+
+    .aside-navigation .btn-left-toggle .icon {
+      /* Mirror toggle icon arrow */
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      /* Overlay when left sidebar expanded */
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 15;
+      background-color: var(--color-neutral-10);
+      opacity: 0.2;
+      transition: all var(--transition-timing) var(--transition-effect);
+      user-select: none;
+    }
+  }
+
+  /* Right Sidebar */
+  .osui-sidebar--is-right {
+    padding: 36px;
+    box-shadow: var(--shadow-none);
+    width: var(--right-sidebar-width);
+
+    .btn-arrow {
+      width: 40px;
+      height: 92px;
+      left: -40px;
+      position: absolute;
+      background: var(--color-neutral-0);
+      border: var(--border-size-none);
+      border-top-left-radius: 32px;
+      border-bottom-left-radius: 32px;
+      z-index: 14;
+      cursor: pointer;
+      color: var(--color-primary);
+
+      .icon {
+        width: fit-content;
+        height: fit-content;
+        font-size: var(--font-size-display);
+        font-weight: var(--font-bold);
+      }
+    }
+  }
+
+  &.layout-side-right--closed {
+    .btn-arrow .icon {
+      /* Mirror toggle button */
+      transform: rotate(180deg);
+    }
+    .main {
+      /* Remove right margin when right sidebar is closed */
+      margin-right: 0;
+    }
+  }
+
+  .osui-sidebar:not(.osui-sidebar--is-open):not(.no-transition) {
+    opacity: 1;
+  }
+}

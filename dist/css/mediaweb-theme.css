@@ -28,9 +28,7 @@
   /* Sidebar */
   --left-sidebar-width-expanded: 222px;
   --left-sidebar-width: 112px;
-  --right-sidebar-width: 440px;
-  /* Card Advanced */
-  --card-advanced-height: Expression.Height;
+  --right-sidebar-width: 400px;
 }
 
 /*! ==============================================================================
@@ -60,6 +58,25 @@ body {
 
 .visibility-hidden {
   visibility: hidden;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-xl);
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+.two-cols-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: var(--space-base) var(--space-m);
+  place-content: center;
 }
 
 /*! ==============================================================================
@@ -270,31 +287,35 @@ h6,
 4. Layout
 =============================================================================== */
 /* Side Menu */
-/* Top */
-.content-top-title {
+.layout-mediaweb.layout.layout-side {
+  /* Top */
+  /* Responsive */
+  /* Left Sidebar */
+  /* Left Sidebar Expanded */
+  /* Right Sidebar */
+}
+.layout-mediaweb.layout.layout-side .ThemeGrid_Container.main-content {
+  /* Fix padding */
+  padding: var(--space-m);
+}
+.layout-mediaweb.layout.layout-side .content-top-title {
   margin-bottom: var(--space-s);
 }
-
-.top-first-row {
+.layout-mediaweb.layout.layout-side .top-first-row {
   margin-bottom: var(--space-base);
   display: flex;
   justify-content: space-between;
 }
-
-.top-second-row {
+.layout-mediaweb.layout.layout-side .top-second-row {
   margin-bottom: var(--space-base);
   display: flex;
   justify-content: space-between;
 }
-
-/* Responsive */
-.tablet .app-menu-content,
-.phone .app-menu-content {
+.tablet .layout-mediaweb.layout.layout-side .app-menu-content, .phone .layout-mediaweb.layout.layout-side .app-menu-content {
   /* So left sidebar doesn't disappear in phone/ layout */
   left: 0;
 }
-
-.layout.layout-side .main {
+.layout-mediaweb.layout.layout-side .main {
   /* Style middle/main content */
   padding: var(--space-l);
   margin-left: calc(var(--left-sidebar-width) - 20px);
@@ -303,9 +324,7 @@ h6,
   background-color: var(--color-secondary-lightest);
   border-radius: var(--border-radius-none) 51px 51px var(--border-radius-none);
 }
-
-/* Left Sidebar */
-.layout-side .application-name .app-name {
+.layout-mediaweb.layout.layout-side .application-name .app-name {
   transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
   white-space: nowrap;
   font-size: var(--font-size-m);
@@ -314,18 +333,18 @@ h6,
   width: 0;
   opacity: 0;
 }
-.layout-side .header-logo {
+.layout-mediaweb.layout.layout-side .header-logo {
   justify-content: space-between;
   padding: var(--space-base) var(--space-base);
 }
-.layout-side .aside-navigation {
+.layout-mediaweb.layout.layout-side .aside-navigation {
   /* Style left sidebar */
   width: var(--left-sidebar-width);
   position: relative;
   transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
   z-index: 16;
 }
-.layout-side .aside-navigation .app-menu-content {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-content {
   /* Style left sidebar */
   color: var(--color-neutral-0);
   background-color: var(--color-primary);
@@ -333,19 +352,19 @@ h6,
   width: var(--left-sidebar-width);
   transition: width var(--transition-timing) var(--transition-effect);
 }
-.layout-side .aside-navigation .app-menu-content a,
-.layout-side .aside-navigation .app-menu-links a:hover,
-.layout-side .aside-navigation .app-menu-links a.active:hover,
-.layout-side .aside-navigation .app-menu-links a.active {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-content a,
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a:hover,
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a.active:hover,
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a.active {
   /* Make nav links text always look the same */
   color: var(--color-neutral-0);
   background-color: transparent;
   font-weight: var(--font-regular);
 }
-.layout-side .aside-navigation .app-menu-links a.active .icon {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a.active .icon {
   background-color: var(--color-primary-darker);
 }
-.layout-side .aside-navigation .btn-left-toggle .icon {
+.layout-mediaweb.layout.layout-side .aside-navigation .btn-left-toggle .icon {
   /* Style left sidebar toggle btn icon */
   font-size: var(--font-size-l);
   color: var(--color-primary-lighter);
@@ -353,32 +372,32 @@ h6,
   place-content: center;
   transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
 }
-.layout-side .aside-navigation .app-menu-links {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links {
   /* Style nav links container */
   padding: var(--space-base) var(--space-l);
   gap: var(--space-base);
   margin-top: 145px;
   align-items: start;
 }
-.layout-side .aside-navigation .app-menu-links a {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a {
   /* Style nav links */
   height: 48px;
   padding: var(--space-none);
   margin: var(--space-none);
   gap: var(--space-base);
 }
-.layout-side .aside-navigation .app-menu-links a:last-child {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a:last-child {
   /* Set last link to bottom */
   bottom: var(--space-base);
   position: absolute;
 }
-.layout-side .aside-navigation .app-menu-links a span {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a span {
   /* Hide links text by default and add transition */
   transition: all var(--transition-timing) var(--transition-effect);
   width: 0;
   opacity: 0;
 }
-.layout-side .aside-navigation .app-menu-links .icon {
+.layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links .icon {
   /*Style link icon */
   height: 48px;
   width: 48px;
@@ -386,9 +405,8 @@ h6,
   place-content: center;
   border-radius: var(--border-radius-link-icon);
 }
-
-.layout-side .aside-navigation .btn-left-toggle,
-.phone .layout:not(.layout-native) .btn-left-toggle {
+.layout-mediaweb.layout.layout-side .aside-navigation .btn-left-toggle,
+.layout-mediaweb.layout.layout-side .phone .layout:not(.layout-native) .btn-left-toggle {
   /* Style toggle btn */
   width: fit-content;
   height: fit-content;
@@ -401,38 +419,34 @@ h6,
   z-index: 17;
   transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
 }
-
-.sidebar-dark {
+.layout-mediaweb.layout.layout-side .sidebar-dark {
   background-color: var(--color-secondary-darkest);
 }
-.sidebar-dark .icon-active {
+.layout-mediaweb.layout.layout-side .sidebar-dark .icon-active {
   background-color: var(--color-neutral-0);
   color: var(--color-secondary-darker);
 }
-
-.icon-active {
+.layout-mediaweb.layout.layout-side .icon-active {
   background-color: var(--color-primary-darker);
 }
-
-/* Left Sidebar Expanded */
-.layout.layout-side.layout-side--expanded .aside-navigation .app-menu-content {
+.layout-mediaweb.layout.layout-side.layout-side--expanded .aside-navigation .app-menu-content {
   width: var(--left-sidebar-width-expanded);
 }
-.layout.layout-side.layout-side--expanded .aside-navigation {
+.layout-mediaweb.layout.layout-side.layout-side--expanded .aside-navigation {
   width: var(--left-sidebar-width-expanded);
 }
-.layout.layout-side.layout-side--expanded .app-menu-links a span,
-.layout.layout-side.layout-side--expanded .app-name {
+.layout-mediaweb.layout.layout-side.layout-side--expanded .app-menu-links a span,
+.layout-mediaweb.layout.layout-side.layout-side--expanded .app-name {
+  /* Show links and app name */
   width: auto;
   opacity: 1;
 }
-.layout.layout-side.layout-side--expanded .aside-navigation .btn-left-toggle .icon {
+.layout-mediaweb.layout.layout-side.layout-side--expanded .aside-navigation .btn-left-toggle .icon {
+  /* Mirror toggle icon arrow */
   transform: rotate(180deg);
 }
-.layout.layout-side.layout-side--expanded .main {
-  margin-left: calc(var(--left-sidebar-width-expanded) - 20px);
-}
-.layout.layout-side.layout-side--expanded::after {
+.layout-mediaweb.layout.layout-side.layout-side--expanded::after {
+  /* Overlay when left sidebar expanded */
   content: "";
   display: block;
   height: 100%;
@@ -446,15 +460,12 @@ h6,
   transition: all var(--transition-timing) var(--transition-effect);
   user-select: none;
 }
-
-/* Right Sidebar */
-.osui-sidebar--is-right {
+.layout-mediaweb.layout.layout-side .osui-sidebar--is-right {
   padding: 36px;
   box-shadow: var(--shadow-none);
   width: var(--right-sidebar-width);
-  transform: translateX(101%);
 }
-.osui-sidebar--is-right .btn-arrow {
+.layout-mediaweb.layout.layout-side .osui-sidebar--is-right .btn-arrow {
   width: 40px;
   height: 92px;
   left: -40px;
@@ -467,21 +478,21 @@ h6,
   cursor: pointer;
   color: var(--color-primary);
 }
-.osui-sidebar--is-right .btn-arrow .icon {
+.layout-mediaweb.layout.layout-side .osui-sidebar--is-right .btn-arrow .icon {
   width: fit-content;
   height: fit-content;
   font-size: var(--font-size-display);
   font-weight: var(--font-bold);
 }
-
-.layout.layout-side.layout-side-right--closed .btn-arrow .icon {
+.layout-mediaweb.layout.layout-side.layout-side-right--closed .btn-arrow .icon {
+  /* Mirror toggle button */
   transform: rotate(180deg);
 }
-.layout.layout-side.layout-side-right--closed .main {
+.layout-mediaweb.layout.layout-side.layout-side-right--closed .main {
+  /* Remove right margin when right sidebar is closed */
   margin-right: 0;
 }
-
-.osui-sidebar:not(.osui-sidebar--is-open):not(.no-transition) {
+.layout-mediaweb.layout.layout-side .osui-sidebar:not(.osui-sidebar--is-open):not(.no-transition) {
   opacity: 1;
 }
 
@@ -660,11 +671,13 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 }
 .card-advanced__title {
   font-size: var(--font-size-s);
-  font-weight: var(--font-bold);
+  z-index: 1;
+  position: relative;
 }
 .card-advanced__subtitle {
   font-size: var(--font-size-s);
-  font-weight: var(--font-bold);
+  z-index: 1;
+  position: relative;
 }
 .card-advanced__content {
   font-size: var(--font-size-s);
@@ -728,11 +741,13 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   color: var(--color-blue-light);
 }
 
-/* Style list of people */
+/* Style event list of people */
 .attendees {
   display: flex;
   flex-shrink: 0;
   margin-left: 8px; /* Correct offset from attendees img */
+  z-index: 1;
+  position: relative;
 }
 .attendees img {
   background-color: var(--color-secondary);
@@ -763,6 +778,9 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 .card-details {
   box-shadow: var(--shadow-none);
   font-weight: var(--font-bold);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-neutral-0);
+  padding: var(--space-m);
 }
 .card-details a {
   color: var(--color-primary);
@@ -770,7 +788,7 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 .card-details__name h2 {
   font-size: var(--font-size-m);
   font-weight: var(--font-bold);
-  color: var(--color-neutral-8);
+  color: var(--color-neutral-9);
 }
 .card-details__contact p {
   color: var(--color-neutral-6);
@@ -796,15 +814,21 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 .card-details__bottom .icon {
   color: var(--color-neutral-5);
 }
+.card-details .phone .layout:not(.layout-native) .btn + .btn {
+  /* Fix weird margin-top on second button on mobile */
+  margin-top: none;
+}
 
 /* Card Simple */
 .card-simple {
   border-radius: var(--border-radius-softer);
-  padding: var(--space-m);
+  padding: var(--space-l) var(--space-m);
   background-color: var(--color-neutral-0);
   position: relative;
   width: 404px;
   min-height: 377px;
+  display: flex;
+  flex-direction: column;
 }
 .card-simple__photo-name-role {
   display: flex;
@@ -820,41 +844,37 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   height: 68px;
   border-radius: var(--border-radius-circle);
 }
-.card-simple__name h2,
-.card-simple__name span,
-.card-simple__name p {
+.card-simple__name {
   font-size: var(--font-size-m);
   font-weight: var(--font-medium);
   color: var(--color-neutral-8);
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-xs);
 }
-.card-simple__role h3,
-.card-simple__role span,
-.card-simple__role p {
+.card-simple__role {
   font-size: var(--font-size-s);
   font-weight: var(--font-regular);
   color: var(--color-neutral-6);
 }
-.card-simple__bio {
+.card-simple__bio span {
   margin-bottom: var(--space-base);
-}
-.card-simple__bio span,
-.card-simple__bio p {
   color: var(--color-neutral-7);
   margin-bottom: var(--space-m);
+  text-overflow: ellipsis;
+  white-space: pre;
+  overflow: hidden;
 }
 .card-simple__contacts {
   display: flex;
   flex-direction: column;
   color: var(--color-neutral-6);
-}
-.card-simple__contacts p,
-.card-simple__contacts span {
-  margin: var(--space-s) var(--space-none) var(--space-none) var(--space-none);
+  gap: var(--space-s);
 }
 .card-simple__view-button {
-  bottom: var(--space-l);
-  position: absolute;
+  margin-top: auto;
+  width: 100%;
+}
+.card-simple__view-button .btn {
+  width: 100%;
 }
 .card-simple__corner-btn .btn {
   position: absolute;
@@ -874,19 +894,6 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 }
 
 /* Cards Container */
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--space-xl);
-  gap: var(--space-xl);
-  width: 100%;
-}
-.cards-container--2-cols {
-  display: grid;
-  grid-template-columns: repeat(2, 404px);
-  gap: var(--space-base) var(--space-m);
-}
-
 /* User Details */
 .user-details {
   display: flex;
@@ -1159,17 +1166,14 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   border-radius: var(--border-radius-none) var(--border-radius-none) 19px 19px;
   overflow: hidden;
   transition: all var(--transition-timing) var(--transition-effect);
-  z-index: 0;
-  position: relative;
+  position: absolute;
   margin-top: calc(var(--space-base) * -1);
   margin-bottom: var(--space-base);
   color: transparent;
   height: 0;
   padding: var(--space-none) var(--space-m) var(--space-none);
   border: var(--border-size-m) transparent solid;
-}
-.table-expandable__row-details a {
-  color: var(--color-info);
+  width: 100%;
 }
 .table-expandable__row-details .ThemeGrid_Width1 {
   /* Fix alignment with icon */
@@ -1181,8 +1185,21 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   grid-auto-flow: column;
   gap: var(--space-base);
 }
+.table-expandable__row-data a, .table-expandable__row-data a:hover {
+  color: var(--color-info);
+  text-decoration: none;
+}
+.table-expandable__row-data .icon {
+  /* Increase icon size */
+  font-size: var(--font-size-xl);
+}
+.table-expandable__row-data .ThemeGrid_MarginGutter {
+  /* Fix alignment on links */
+  margin-left: 0;
+}
 .table-expandable__row--expanded {
   background-color: var(--color-neutral-3);
+  z-index: 3;
 }
 .table-expandable__row--expanded .table-expandable__row-icon {
   transform: rotate(180deg);
@@ -1193,6 +1210,7 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   color: var(--color-neutral-9);
   box-shadow: var(--shadow-xs);
   border: var(--border-size-m) var(--color-neutral-2) solid;
+  z-index: 2;
 }
 
 /*! ==============================================================================
@@ -1248,7 +1266,6 @@ input.form-control.popover-input.OSFillParent.form-control.input {
 
 .btn-terciary {
   min-width: fit-content;
-  width: 350px;
   background-color: var(--color-grape-lightest);
   color: var(--color-primary);
   border: var(--border-size-s) solid transparent;

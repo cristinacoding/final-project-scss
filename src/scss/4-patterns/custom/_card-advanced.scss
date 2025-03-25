@@ -24,11 +24,14 @@
 
   &__title {
     font-size: var(--font-size-s);
-    font-weight: var(--font-bold);
+    z-index: 1;
+    position: relative;
   }
+
   &__subtitle {
     font-size: var(--font-size-s);
-    font-weight: var(--font-bold);
+    z-index: 1;
+    position: relative;
   }
 
   &__content {
@@ -41,6 +44,7 @@
   &__content-image {
     display: flex;
     flex-direction: column;
+
     img {
       width: fit-content;
       max-width: 100%;
@@ -116,11 +120,13 @@
   }
 }
 
-/* Style list of people */
+/* Style event list of people */
 .attendees {
   display: flex;
   flex-shrink: 0;
   margin-left: 8px; /* Correct offset from attendees img */
+  z-index: 1;
+  position: relative;
 
   img {
     background-color: var(--color-secondary);

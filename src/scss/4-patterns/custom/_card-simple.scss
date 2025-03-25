@@ -1,10 +1,12 @@
 .card-simple {
   border-radius: var(--border-radius-softer);
-  padding: var(--space-m);
+  padding: var(--space-l) var(--space-m);
   background-color: var(--color-neutral-0);
   position: relative;
   width: 404px;
   min-height: 377px;
+  display: flex;
+  flex-direction: column;
 
   &__photo-name-role {
     display: flex;
@@ -24,48 +26,41 @@
   }
 
   &__name {
-    h2,
-    span,
-    p {
-      font-size: var(--font-size-m);
-      font-weight: var(--font-medium);
-      color: var(--color-neutral-8);
-      margin-bottom: var(--space-s);
-    }
+    font-size: var(--font-size-m);
+    font-weight: var(--font-medium);
+    color: var(--color-neutral-8);
+    margin-bottom: var(--space-xs);
   }
 
   &__role {
-    h3,
-    span,
-    p {
-      font-size: var(--font-size-s);
-      font-weight: var(--font-regular);
-      color: var(--color-neutral-6);
-    }
+    font-size: var(--font-size-s);
+    font-weight: var(--font-regular);
+    color: var(--color-neutral-6);
   }
 
-  &__bio {
+  &__bio span {
     margin-bottom: var(--space-base);
-    span,
-    p {
-      color: var(--color-neutral-7);
-      margin-bottom: var(--space-m);
-    }
+    color: var(--color-neutral-7);
+    margin-bottom: var(--space-m);
+    text-overflow: ellipsis;
+    white-space: pre;
+    overflow: hidden;
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
     color: var(--color-neutral-6);
-    p,
-    span {
-      margin: var(--space-s) var(--space-none) var(--space-none) var(--space-none);
-    }
+    gap: var(--space-s);
   }
 
   &__view-button {
-    bottom: var(--space-l);
-    position: absolute;
+    margin-top: auto;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
   }
 
   &__corner-btn .btn {

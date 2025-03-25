@@ -1,7 +1,10 @@
 .card-details {
   box-shadow: var(--shadow-none);
   font-weight: var(--font-bold);
-  
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-neutral-0);
+  padding: var(--space-m);
+
   a {
     color: var(--color-primary);
   }
@@ -9,7 +12,7 @@
   &__name h2 {
     font-size: var(--font-size-m);
     font-weight: var(--font-bold);
-    color: var(--color-neutral-8);
+    color: var(--color-neutral-9);
   }
 
   &__contact p {
@@ -40,5 +43,10 @@
 
   &__bottom .icon {
     color: var(--color-neutral-5);
+  }
+
+  .phone .layout:not(.layout-native) .btn + .btn {
+    /* Fix weird margin-top on second button on mobile */
+    margin-top: none;
   }
 }

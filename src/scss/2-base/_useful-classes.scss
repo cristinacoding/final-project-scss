@@ -1,7 +1,26 @@
 .border-radius-softer {
-    border-radius: 16px;
-  }
+  border-radius: 16px;
+}
 
-  .visibility-hidden {
-    visibility: hidden;
-  }
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-xl);
+  gap: var(--space-xl);
+  width: 100%;
+}
+
+.two-cols-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: var(--space-base) var(--space-m);
+  place-content: center;
+}
