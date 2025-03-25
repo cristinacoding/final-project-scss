@@ -1,0 +1,8 @@
+@mixin background-image-align($position: absolute, $top: auto, $bottom: 0, $right: 0, $object-fit: cover, $z-index: 0) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    object-fit: $object-fit;
+    z-index: $z-index;
+  }

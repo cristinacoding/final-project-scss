@@ -11,40 +11,98 @@
     width: 100%;
   }
 
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: var(--space-s);
+    width: 100%;
+  }
+
+  &__header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    padding: var(--space-m);
+    pointer-events: none;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      font-size: var(--font-size-xl);
+      font-weight: 400;
+    }
+    .OSFillParent {
+      /* Stops header titles from being apart from icon */
+      width: fit-content;
+    }
+  }
+
   &__row {
     background-color: var(--color-neutral-0);
     border-radius: 19px;
     height: 70px;
     box-shadow: var(--shadow-xs);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    gap: var(--space-s);
     padding: var(--space-m);
+    display: flex;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-timing) var(--transition-effect);
     z-index: 1;
     position: relative;
+
+    * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      place-content: center;
+    }
 
     &-icon {
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: var(--font-size-h3);
-      transition: transform 0.3s ease; // Smooth rotation
+      transition: transform var(--transition-timing) var(--transition-effect);
+    }
+
+    img {
+      border-radius: var(--border-radius-circle);
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
     }
 
     &-details {
-      display: flex;
-      justify-content: space-between;
-      background: var(--color-neutral-0);
-      border-radius: 0 0 19px 19px;
+      background-color: var(--color-neutral-0);
+      border-radius: var(--border-radius-none) var(--border-radius-none) 19px 19px;
       overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
+      transition: all var(--transition-timing) var(--transition-effect);
       z-index: 0;
       position: relative;
       margin-top: calc(var(--space-base) * -1);
+      margin-bottom: var(--space-base);
+      color: transparent;
+      height: 0;
+      padding: var(--space-none) var(--space-m) var(--space-none);
+      border: var(--border-size-m) transparent solid;
+
+      a {
+        color: var(--color-info);
+      }
+
+      .ThemeGrid_Width1 {
+        /* Fix alignment with icon */
+        display: flex;
+      }
+    }
+
+    &-data {
+      display: grid;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-auto-flow: column;
+      gap: var(--space-base);
     }
 
     &--expanded {
@@ -55,9 +113,12 @@
       }
     }
   }
+
   &__row--expanded + &__row-details {
     padding: var(--space-xxl) var(--space-m) var(--space-l);
-    max-height: 500px;
-    opacity: 1;
+    height: auto;
+    color: var(--color-neutral-9);
+    box-shadow: var(--shadow-xs);
+    border: var(--border-size-m) var(--color-neutral-2) solid;
   }
 }

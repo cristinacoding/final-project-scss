@@ -9,51 +9,73 @@
   min-height: fit-content;
   width: 100%;
 
+  /* Aligns Image to either top or bottom */
   &__background-image {
     img {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      object-fit: cover;
-      z-index: 0;
+      @include background-image-align;
     }
 
-    &--top img {
-      top: 0;
-      bottom: auto;
-      right: 20px;
+    &--top {
+      img {
+        @include background-image-align($bottom: auto, $top: 0, $right: var(--space-base));
+      }
     }
   }
 
   &__title {
-    color: var(--color-secondary-darkest);
     font-size: var(--font-size-s);
     font-weight: var(--font-bold);
   }
   &__subtitle {
-    color: var(--color-secondary-darkest);
     font-size: var(--font-size-s);
     font-weight: var(--font-bold);
   }
 
   &__content {
-    color: var(--color-secondary-darker);
     font-size: var(--font-size-s);
     font-weight: var(--font-medium);
+    z-index: 1;
+    position: relative;
   }
 
   &__content-image {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: fit-content;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      padding: var(--space-s);
+    }
   }
 
-  a {
-    color: var(--color-blue-light);
+  /* 3 Columns with Icons  */
+  &__icon-column .columns-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-secondary-lightest);
+      padding: 10px;
+      border-radius: var(--border-radius-soft);
+      width: 45px;
+      height: 45px;
+    }
   }
 
+  /* Corner Action Button */
   &__btn {
-    .btn:not([class*=border-radius]) {
+    .btn:not([class*="border-radius"]) {
       border-radius: var(--border-radius-none);
       border-top-left-radius: var(--border-radius-softer);
     }
+
     .btn {
       position: absolute;
       bottom: 0;
@@ -64,16 +86,21 @@
       justify-content: center;
       align-items: center;
       background-color: var(--color-neutral-0);
-      border-radius : var(--border-radius-none);
+      border-radius: var(--border-radius-none);
       border: var(--border-size-none);
+
       .icon {
         color: var(--color-blue-darkest);
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-display);
         font-weight: var(--font-bold);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
       }
     }
   }
 
+  /* Overrides 
   &.card {
     border: var(--border-size-none);
     border-radius: var(--border-radius-softer);
@@ -82,34 +109,42 @@
   .card-content {
     padding: var(--space-s) var(--space-m);
   }
-}
+    */
 
+  a {
+    color: var(--color-blue-light);
+  }
+}
 
 /* Style list of people */
 .attendees {
   display: flex;
   flex-shrink: 0;
-}
-.attendee {
-  background-color: var(--color-secondary);
-  border: 1px solid white;
-  overflow: hidden;
-  margin-left: -8px;
-}
-.attendees::after {
-  font-family: "Raleway";
-  content: "+12";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40px;
-  background-color: var(--color-blue-dark);
-  border-radius: 100%;
-  border: 1px solid white;
-  overflow: hidden;
-  margin-left: -8px;
-}
-.avatar-medium {
-  min-width: 40px;
+  margin-left: 8px; /* Correct offset from attendees img */
+
+  img {
+    background-color: var(--color-secondary);
+    border: var(--border-size-s) solid var(--color-neutral-0);
+    overflow: hidden;
+    margin-left: -8px;
+    border-radius: var(--border-radius-circle);
+    width: 37px;
+    height: 37px;
+  }
+
+  &::after {
+    font-family: "Raleway";
+    color: var(--color-neutral-0);
+    content: "+12";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37px;
+    width: 37px;
+    background-color: var(--color-blue-darker);
+    border-radius: 100%;
+    border: var(--border-size-s) solid var(--color-neutral-0);
+    overflow: hidden;
+    margin-left: -8px;
+  }
 }

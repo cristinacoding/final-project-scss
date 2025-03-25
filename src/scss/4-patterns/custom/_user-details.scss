@@ -3,19 +3,20 @@
   align-items: center;
   column-gap: var(--space-base);
 
-  h1 {
+  &__name {
     font-weight: var(--font-bold);
     color: var(--color-blue-darkest);
     font-size: var(--font-size-s);
-    white-space: nowrap;
   }
 
-  p {
+  &__details {
     color: var(--color-blue);
     font-size: var(--font-size-xs);
     font-weight: var(--font-regular);
-    margin: var(--space-xs) var(--space-none) var(--space-none) var(--space-none);
-    white-space: nowrap;
+  }
+
+  &__photo {
+    border-radius: var(--border-radius-circle);
   }
 
   .icon {

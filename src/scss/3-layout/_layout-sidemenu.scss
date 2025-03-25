@@ -24,7 +24,8 @@
 
 .layout.layout-side .main {
   /* Style middle/main content */
-  margin-left: var(--left-sidebar-width);
+  padding: var(--space-l);
+  margin-left: calc(var(--left-sidebar-width) - 20px);
   margin-right: var(--right-sidebar-width);
   transition: margin var(--transition-timing) var(--transition-effect);
   background-color: var(--color-secondary-lightest);
@@ -177,7 +178,7 @@
   }
 
   .main {
-    margin-left: var(--left-sidebar-width-expanded);
+    margin-left: calc(var(--left-sidebar-width-expanded) - 20px);
   }
   &::after {
     content: "";
