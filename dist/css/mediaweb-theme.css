@@ -26,8 +26,8 @@
   --border-radius-softer: 16px;
   --border-radius-link-icon: 11px; /* retirar variavel por valor direto */
   /* Sidebar */
-  --left-sidebar-width-expanded: 222px;
   --left-sidebar-width: 112px;
+  --initial-left-sidebar-width: var(--left-sidebar-width);
   --right-sidebar-width: 400px;
 }
 
@@ -85,14 +85,13 @@ body {
 /* Iconography */
 @font-face {
   font-family: "mediaweb-icons";
-  src: url("/Mediaweb/mediaweb-icons.eot");
-  src: url("/Mediaweb/mediaweb-icons.eot") format("embedded-opentype"), url("/Mediaweb/mediaweb-icons.ttf") format("truetype"), url("/Mediaweb/mediaweb-icons.woff") format("woff"), url("/Mediaweb/mediaweb-icons.svg") format("svg");
+  src: url("Mediaweb_Theme/mediaweb-icons.eot");
+  src: url("Mediaweb_Theme/mediaweb-icons.eot") format("embedded-opentype"), url("Mediaweb_Theme/mediaweb-icons.ttf") format("truetype"), url("Mediaweb_Theme/mediaweb-icons.woff") format("woff"), url("Mediaweb_Theme/mediaweb-icons.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-[class^=icon-],
-[class*=" icon-"] {
+[class^=icon-mw-], [class*=" icon-mw-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "mediaweb-icons" !important;
   speak: never;
@@ -106,155 +105,155 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-angle-double-down:before {
+.icon-mw-angle-double-down:before {
   content: "\e900";
 }
 
-.icon-angle-double-left:before {
+.icon-mw-angle-double-left:before {
   content: "\e901";
 }
 
-.icon-angle-double-right:before {
+.icon-mw-angle-double-right:before {
   content: "\e902";
 }
 
-.icon-angle-double-up:before {
+.icon-mw-angle-double-up:before {
   content: "\e903";
 }
 
-.icon-angle-down:before {
+.icon-mw-angle-down:before {
   content: "\e904";
 }
 
-.icon-angle-left:before {
+.icon-mw-angle-left:before {
   content: "\e905";
 }
 
-.icon-angle-right:before {
+.icon-mw-angle-right:before {
   content: "\e906";
 }
 
-.icon-angle-up:before {
+.icon-mw-angle-up:before {
   content: "\e907";
 }
 
-.icon-calendar:before {
+.icon-mw-calendar:before {
   content: "\e908";
 }
 
-.icon-caret-down:before {
+.icon-mw-caret-down:before {
   content: "\e909";
 }
 
-.icon-caret-left:before {
+.icon-mw-caret-left:before {
   content: "\e90a";
 }
 
-.icon-caret-right:before {
+.icon-mw-caret-right:before {
   content: "\e90b";
 }
 
-.icon-caret-up:before {
+.icon-mw-caret-up:before {
   content: "\e90c";
 }
 
-.icon-chart:before {
+.icon-mw-chart:before {
   content: "\e90d";
 }
 
-.icon-chevron:before {
+.icon-mw-chevron:before {
   content: "\e90e";
 }
 
-.icon-cogwheel:before {
+.icon-mw-cogwheel:before {
   content: "\e90f";
 }
 
-.icon-ellipsis-h:before {
+.icon-mw-ellipsis-h:before {
   content: "\e910";
 }
 
-.icon-envelope:before {
+.icon-mw-envelope:before {
   content: "\e911";
 }
 
-.icon-files-3:before {
+.icon-mw-files-3:before {
   content: "\e912";
 }
 
-.icon-graph:before {
+.icon-mw-graph:before {
   content: "\e913";
 }
 
-.icon-home:before {
+.icon-mw-home:before {
   content: "\e914";
 }
 
-.icon-like:before {
+.icon-mw-like:before {
   content: "\e915";
 }
 
-.icon-location-arrow:before {
+.icon-mw-location-arrow:before {
   content: "\e916";
 }
 
-.icon-lotus-icon:before {
+.icon-mw-lotus-icon:before {
   content: "\e917";
 }
 
-.icon-mind-icon:before {
+.icon-mw-mind-icon:before {
   content: "\e918";
 }
 
-.icon-money-bag:before {
+.icon-mw-money-bag:before {
   content: "\e919";
 }
 
-.icon-musculation-icon:before {
+.icon-mw-musculation-icon:before {
   content: "\e91a";
 }
 
-.icon-phone-icon:before {
+.icon-mw-phone-icon:before {
   content: "\e91b";
 }
 
-.icon-place:before {
+.icon-mw-place:before {
   content: "\e91c";
 }
 
-.icon-search:before {
+.icon-mw-search:before {
   content: "\e91d";
 }
 
-.icon-sport:before {
+.icon-mw-sport:before {
   content: "\e91e";
 }
 
-.icon-suitcase:before {
+.icon-mw-suitcase:before {
   content: "\e91f";
 }
 
-.icon-time:before {
+.icon-mw-time:before {
   content: "\e920";
 }
 
-.icon-unlock:before {
+.icon-mw-unlock:before {
   content: "\e921";
 }
 
-.icon-unsorted:before {
+.icon-mw-unsorted:before {
   content: "\e922";
 }
 
-.icon-unsorted-lines:before {
+.icon-mw-unsorted-lines:before {
   content: "\e923";
 }
 
-.icon-user:before {
+.icon-mw-user:before {
   content: "\e924";
 }
 
-.icon-wallet-notify:before {
+.icon-mw-wallet-notify:before {
   content: "\e925";
 }
 
@@ -318,24 +317,11 @@ h6,
 .layout-mediaweb.layout.layout-side .main {
   /* Style middle/main content */
   padding: var(--space-l);
-  margin-left: calc(var(--left-sidebar-width) - 20px);
+  margin-left: calc(var(--initial-left-sidebar-width) - 20px);
   margin-right: var(--right-sidebar-width);
   transition: margin var(--transition-timing) var(--transition-effect);
   background-color: var(--color-secondary-lightest);
   border-radius: var(--border-radius-none) 51px 51px var(--border-radius-none);
-}
-.layout-mediaweb.layout.layout-side .application-name .app-name {
-  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
-  white-space: nowrap;
-  font-size: var(--font-size-m);
-  color: var(--color-neutral-1);
-  font-weight: var(--font-medium);
-  width: 0;
-  opacity: 0;
-}
-.layout-mediaweb.layout.layout-side .header-logo {
-  justify-content: space-between;
-  padding: var(--space-base) var(--space-base);
 }
 .layout-mediaweb.layout.layout-side .aside-navigation {
   /* Style left sidebar */
@@ -351,6 +337,19 @@ h6,
   border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
   width: var(--left-sidebar-width);
   transition: width var(--transition-timing) var(--transition-effect);
+}
+.layout-mediaweb.layout.layout-side .aside-navigation .header-logo {
+  justify-content: space-between;
+  padding: var(--space-base) var(--space-base);
+}
+.layout-mediaweb.layout.layout-side .aside-navigation .header-logo .application-name {
+  justify-content: unset;
+}
+.layout-mediaweb.layout.layout-side .aside-navigation .header-logo .application-name__logo-extended {
+  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+  width: 0;
+  opacity: 0;
+  margin-left: var(--space-s);
 }
 .layout-mediaweb.layout.layout-side .aside-navigation .app-menu-content a,
 .layout-mediaweb.layout.layout-side .aside-navigation .app-menu-links a:hover,
@@ -413,11 +412,11 @@ h6,
   background-color: transparent;
   border: var(--border-size-none);
   padding: var(--space-none);
-  position: absolute;
-  right: var(--space-base);
+  position: fixed;
+  left: calc(var(--left-sidebar-width) - var(--space-xxl));
   top: var(--space-base);
   z-index: 17;
-  transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+  transition: all var(--transition-timing) var(--transition-effect);
 }
 .layout-mediaweb.layout.layout-side .sidebar-dark {
   background-color: var(--color-secondary-darkest);
@@ -429,15 +428,12 @@ h6,
 .layout-mediaweb.layout.layout-side .icon-active {
   background-color: var(--color-primary-darker);
 }
-.layout-mediaweb.layout.layout-side.layout-side--expanded .aside-navigation .app-menu-content {
-  width: var(--left-sidebar-width-expanded);
-}
-.layout-mediaweb.layout.layout-side.layout-side--expanded .aside-navigation {
-  width: var(--left-sidebar-width-expanded);
+.layout-mediaweb.layout.layout-side.layout-side--expanded {
+  --left-sidebar-width: 222px;
 }
 .layout-mediaweb.layout.layout-side.layout-side--expanded .app-menu-links a span,
-.layout-mediaweb.layout.layout-side.layout-side--expanded .app-name {
-  /* Show links and app name */
+.layout-mediaweb.layout.layout-side.layout-side--expanded .header-logo .application-name__logo-extended {
+  /* Show links and extended logo */
   width: auto;
   opacity: 1;
 }
@@ -489,7 +485,7 @@ h6,
   transform: rotate(180deg);
 }
 .layout-mediaweb.layout.layout-side.layout-side-right--closed .main {
-  /* Remove right margin when right sidebar is closed */
+  /* Remove right margin from main when right sidebar is closed */
   margin-right: 0;
 }
 .layout-mediaweb.layout.layout-side .osui-sidebar:not(.osui-sidebar--is-open):not(.no-transition) {
@@ -639,6 +635,7 @@ input.form-control.popover-input.OSFillParent.form-control.input {
   overflow: hidden;
   min-height: fit-content;
   width: 100%;
+  height: 100%;
   /* Aligns Image to either top or bottom */
   /* 3 Columns with Icons  */
   /* Corner Action Button */

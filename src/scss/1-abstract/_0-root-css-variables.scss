@@ -27,7 +27,7 @@
   --border-radius-link-icon: 11px; /* retirar variavel por valor direto */
 
   /* Sidebar */
-  --left-sidebar-width-expanded: 222px;
   --left-sidebar-width: 112px;
+  --initial-left-sidebar-width: var(--left-sidebar-width);
   --right-sidebar-width: 400px;
 }

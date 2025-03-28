@@ -31,7 +31,7 @@
   .main {
     /* Style middle/main content */
     padding: var(--space-l);
-    margin-left: calc(var(--left-sidebar-width) - 20px);
+    margin-left: calc(var(--initial-left-sidebar-width) - 20px);
     margin-right: var(--right-sidebar-width);
     transition: margin var(--transition-timing) var(--transition-effect);
     background-color: var(--color-secondary-lightest);
@@ -40,26 +40,12 @@
 
   /* Left Sidebar */
 
-  .application-name .app-name {
-    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
-    white-space: nowrap;
-    font-size: var(--font-size-m);
-    color: var(--color-neutral-1);
-    font-weight: var(--font-medium);
-    width: 0;
-    opacity: 0;
-  }
-
-  .header-logo {
-    justify-content: space-between;
-    padding: var(--space-base) var(--space-base);
-  }
-
   .aside-navigation {
     /* Style left sidebar */
     width: var(--left-sidebar-width);
     position: relative;
-    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+    transition: opacity var(--transition-timing) var(--transition-effect),
+      width var(--transition-timing) var(--transition-effect);
     z-index: 16;
 
     .app-menu-content {
@@ -69,6 +55,23 @@
       border-radius: var(--border-radius-none) var(--border-radius-rounded) var(--border-radius-rounded) var(--border-radius-none);
       width: var(--left-sidebar-width);
       transition: width var(--transition-timing) var(--transition-effect);
+    }
+
+    .header-logo {
+      justify-content: space-between;
+      padding: var(--space-base) var(--space-base);
+
+      .application-name {
+        justify-content: unset;
+
+        &__logo-extended {
+          transition: opacity var(--transition-timing) var(--transition-effect),
+            width var(--transition-timing) var(--transition-effect);
+          width: 0;
+          opacity: 0;
+          margin-left: var(--space-s);
+        }
+      }
     }
 
     .app-menu-content a,
@@ -93,7 +96,8 @@
       color: var(--color-primary-lighter);
       margin: 0px;
       place-content: center;
-      transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+      transition: opacity var(--transition-timing) var(--transition-effect),
+        width var(--transition-timing) var(--transition-effect);
     }
 
     .app-menu-links {
@@ -143,11 +147,11 @@
     background-color: transparent;
     border: var(--border-size-none);
     padding: var(--space-none);
-    position: absolute;
-    right: var(--space-base);
+    position: fixed;
+    left: calc(var(--left-sidebar-width) - var(--space-xxl));
     top: var(--space-base);
     z-index: 17;
-    transition: opacity var(--transition-timing) var(--transition-effect), width var(--transition-timing) var(--transition-effect);
+    transition: all var(--transition-timing) var(--transition-effect);
   }
 
   .sidebar-dark {
@@ -165,17 +169,11 @@
 
   /* Left Sidebar Expanded */
   &.layout-side--expanded {
-    .aside-navigation .app-menu-content {
-      width: var(--left-sidebar-width-expanded);
-    }
-
-    .aside-navigation {
-      width: var(--left-sidebar-width-expanded);
-    }
+    --left-sidebar-width: 222px;
 
     .app-menu-links a span,
-    .app-name {
-      /* Show links and app name */
+    .header-logo .application-name__logo-extended {
+      /* Show links and extended logo */
       width: auto;
       opacity: 1;
     }
@@ -235,8 +233,9 @@
       /* Mirror toggle button */
       transform: rotate(180deg);
     }
+
     .main {
-      /* Remove right margin when right sidebar is closed */
+      /* Remove right margin from main when right sidebar is closed */
       margin-right: 0;
     }
   }
